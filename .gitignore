@@ -1,0 +1,8 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+.Apple*
+:2e*
+*.swp
+private/events/tmp
