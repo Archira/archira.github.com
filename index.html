@@ -11,21 +11,25 @@
     a{text-decoration:none;color:inherit;font:inherit;cursor:pointer}
     li{list-style:none;margin-right:20px;display:inline-block;font:11px/25px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;}
     .hot a:hover{color:white}
-    .fonted{font:11px/25px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;`}
+    .fonted{font:11px/25px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;}
+    .r{height:28px;width:64px;opacity:0.15;margin-top:-16px;-webkit-transform:scale(1,-1)}
   </style>
 </head>
 <body>
 <div style="border-top:2px solid #ebebeb;height:25px;background:#222;min-width:800px;">
-  <ol style="font:10px/12px arial;color:#c7c7c7;margin:0;padding:0 0 0 20px;"><li style='padding:0 20px;font-size:12px;color:#fff;margin-right:40px;'>dczign</li><li>Products</li><li>Solutions</li><li>Newswire</li><li>Downloads</li><li>Support</li></ol>
+  <ol style="font:10px/12px arial;color:#c7c7c7;margin:0;padding:0 0 0 20px;"><li style='padding:0 20px;font-size:12px;color:#fff;margin-right:40px;'>dczign</li><li>Historian</li><li>Weibr</li></ol>
   <div style="margin-left:110px;background:rgba(255,255,255,0.13);height:25px;margin-top:-25px;text-align:right;color:#999;padding-right:10px;" class='fonted hot'><a target=_blank href='http://twitter.com/dczign'>FOLLOW</a></div>
 </div>
 <center>
   <div style="height:70px">
-    <div style="margin-top:180px;font:12px/20px 'Lucida Grande', Arial, sans-serif;color:#585858;background:#ebebeb;width:280px;padding:5px 10px;border-radius:7px;"><span style="font-size:18px;">Weibr</span>, A different experience of Sina Weibo.</div>
+    <div id='w1' style="margin-top:180px;font:12px/20px 'Lucida Grande', Arial, sans-serif;color:#585858;background:#ebebeb;width:330px;padding:5px 10px;border-radius:7px;"><span style="font-size:18px;">Historian</span>, create your own history and learn from it.</div>
+    <div id='w2' style="display:none;margin-top:180px;font:12px/20px 'Lucida Grande', Arial, sans-serif;color:#585858;background:#ebebeb;width:280px;padding:5px 10px;border-radius:7px;"><span style="font-size:18px;">Weibr</span>, A different experience of Sina Weibo.</div>
   </div>
-  <div style='width:180px;height:70px;background:rgba(0,0,0,0.1);-webkit-transform:perspective(500) rotateX(45deg);border-bottom:2px solid #aaa'></div>
-  <div style="width:150px;height:164px;margin-top:-90px;">
-    <div style='display:inline-block'><a target=_blank href='http://itunes.apple.com/us/app/weibr/id461272066?mt=12'><img src="/images/weibr.png" style='width:64px;height:64px;'></a><div style='background:url(/images/weibrR.png);height:28px;width:64px;opacity:0.15;margin-top:-16px;'></div></div>
+  <div style='width:220px;height:70px;background:rgba(0,0,0,0.1);-webkit-transform:perspective(500) rotateX(45deg);border-bottom:2px solid #aaa'></div>
+  <div style="width:150px;height:164px;margin-top:-90px;-webkit-transform:translate3d(0,0,0);">
+
+    <div style='display:inline-block' onmouseover='document.getElementById("w1").style.display="block";document.getElementById("w2").style.display="none";'><a target=_blank href='http://itunes.apple.com/us/app/historian/id492466830?mt=12'><img src="/images/Historian.png" style='width:64px;height:64px;'></a><div class='r' style="background:url(/images/Historian.png) 0px 28px;"></div></div>
+    <div style='display:inline-block' onmouseover='document.getElementById("w2").style.display="block";document.getElementById("w1").style.display="none";'><a target=_blank href='http://itunes.apple.com/us/app/weibr/id461272066?mt=12'><img src="/images/Weibr.png" style='width:64px;height:64px;'></a><div class='r' style="background:url(/images/Weibr.png) 0px 28px;"></div></div>
   </div>
 </center>
 </html>
