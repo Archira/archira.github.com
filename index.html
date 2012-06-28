@@ -13,23 +13,66 @@
     .hot a:hover{color:white}
     .fonted{font:11px/25px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;}
     .r{height:28px;width:64px;opacity:0.15;margin-top:-16px;-webkit-transform:scale(1,-1)}
+    .w{display:none;margin-top:180px;font:12px/20px 'Lucida Grande', Arial, sans-serif;color:#585858;background:#ebebeb;padding:5px 10px;border-radius:7px;}
+    .w span{font-size:18px;}
   </style>
 </head>
 <body>
 <div style="border-top:2px solid #ebebeb;height:25px;background:#222;min-width:800px;">
-  <ol style="font:10px/12px arial;color:#c7c7c7;margin:0;padding:0 0 0 20px;"><li style='padding:0 20px;font-size:12px;color:#fff;margin-right:40px;'>dczign</li><li>Historian</li><li>Weibr</li></ol>
+  <ol style="font:10px/12px arial;color:#c7c7c7;margin:0;padding:0 0 0 20px;"><li style='padding:0 20px;font-size:12px;color:#fff;margin-right:40px;'>dczign</li><li>tuī</li><li>Historian</li><li>Weibr</li></ol>
   <div style="margin-left:110px;background:rgba(255,255,255,0.13);height:25px;margin-top:-25px;text-align:right;color:#999;padding-right:10px;" class='fonted hot'><a target=_blank href='http://twitter.com/dczign'>FOLLOW</a></div>
 </div>
 <center>
   <div style="height:70px">
-    <div id='w1' style="margin-top:180px;font:12px/20px 'Lucida Grande', Arial, sans-serif;color:#585858;background:#ebebeb;width:330px;padding:5px 10px;border-radius:7px;"><span style="font-size:18px;">Historian</span>, create your own history and learn from it.</div>
-    <div id='w2' style="display:none;margin-top:180px;font:12px/20px 'Lucida Grande', Arial, sans-serif;color:#585858;background:#ebebeb;width:280px;padding:5px 10px;border-radius:7px;"><span style="font-size:18px;">Weibr</span>, a different experience of Sina Weibo.</div>
+    <div id='w0' class='w' style='display:block;width:298px;'><span>tuī</span>, tuī for Twitter, on a Mac, keeps you updated.</div>
+    <div id='w1' class='w' style='width:330px;'><span>Historian</span>, create your own history and learn from it.</div>
+    <div id='w2' class='w' style='width:280px;'><span>Weibr</span>, a different experience of Sina Weibo.</div>
   </div>
-  <div style='width:220px;height:70px;background:rgba(0,0,0,0.1);-webkit-transform:perspective(500) rotateX(45deg);border-bottom:2px solid #aaa'></div>
-  <div style="width:150px;height:164px;margin-top:-90px;-webkit-transform:translate3d(0,0,0);">
-
-    <div style='display:inline-block' onmouseover='document.getElementById("w1").style.display="block";document.getElementById("w2").style.display="none";'><a target=_blank href='http://itunes.apple.com/us/app/historian/id492466830?mt=12'><img src="/images/Historian.png" style='width:64px;height:64px;'></a><div class='r' style="background:url(/images/Historian.png) 0px 28px;"></div></div>
-    <div style='display:inline-block' onmouseover='document.getElementById("w2").style.display="block";document.getElementById("w1").style.display="none";'><a target=_blank href='http://itunes.apple.com/us/app/weibr/id461272066?mt=12'><img src="/images/Weibr.png" style='width:64px;height:64px;'></a><div class='r' style="background:url(/images/Weibr.png) 0px 28px;"></div></div>
+  <div style='width:295px;height:70px;background:rgba(0,0,0,0.1);-webkit-transform:perspective(500) rotateX(45deg);border-bottom:2px solid #aaa'></div>
+  <div style="width:225px;height:164px;margin-top:-90px;-webkit-transform:translate3d(0,0,0);">
+    <div style='display:inline-block' onmouseover='(new App(0)).hover();'><a target=_blank href='http://itunes.apple.com/us/app/tui/id530081035?mt=12'><img src="/images/tui.png" style='width:64px;height:64px;'></a><div class='r' style="background:url(/images/tui.png) 0px 28px;"></div></div>
+    <div style='display:inline-block' onmouseover='(new App(1)).hover();'><a target=_blank href='http://itunes.apple.com/us/app/historian/id492466830?mt=12'><img src="/images/Historian.png" style='width:64px;height:64px;'></a><div class='r' style="background:url(/images/Historian.png) 0px 28px;"></div></div>
+    <div style='display:inline-block' onmouseover='(new App(2)).hover();'><a target=_blank href='http://itunes.apple.com/us/app/weibr/id461272066?mt=12'><img src="/images/Weibr.png" style='width:64px;height:64px;'></a><div class='r' style="background:url(/images/Weibr.png) 0px 28px;"></div></div>
   </div>
 </center>
 </html>
+<script type="text/javascript" charset="utf-8">
+  function $(s){return document.getElementById(s);}
+  function Klass(n,o){
+    var m;
+    window[n]={};
+    if(o.init){
+      window[n]=o.init;
+      delete o.init;
+      window[n].reset=function(){this.$={};};
+    }
+    for(m in o){
+      if(m[0]=='_')
+        window[n][m.slice(1)]=o[m];
+      else
+        window[n].prototype[m]=o[m];
+    }
+    delete o;
+    window[n].$={};
+  }
+  Klass('App',{
+    init:
+      function(id){
+        if(typeof App.$[id]=='undefined'){
+          this.id=id;
+          App.$[id]=this;
+        }
+        return App.$[id];
+      },
+    hover:
+      function(){
+        $('w'+ App.on).style.display='none';
+        $('w'+ this.id).style.display='block';
+        App.on = this.id;
+      },
+    _on:
+      0
+  });
+</script>
+
+
